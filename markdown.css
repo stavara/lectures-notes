@@ -1,0 +1,99 @@
+/* Títulos */
+#writing-md h1,
+#writing-md h2,
+#writing-md h3,
+#writing-md h4 {
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+#writing-md h1 {
+    margin-top: 0;
+    display: flex;
+    font-size: 24px;
+    padding-bottom: 0.3rem;
+    line-height: 1;
+}
+#writing-md h2 {
+    font-size: 1.75rem;
+}
+#writing-md h3 {
+    font-size: 1.5rem;
+}
+
+/* Párrafos */
+#writing-md p {
+    margin-bottom: 1rem;
+}
+
+/* Enlaces */
+#writing-md a {
+    color: #0366d6;
+    text-decoration: none;
+}
+#writing-md a:hover {
+    text-decoration: underline;
+}
+
+/* Imágenes */
+#writing-md img {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* Listas */
+#writing-md ul,
+#writing-md ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+#writing-md li {
+    margin-bottom: 0.5rem;
+}
+
+/* Código en línea */
+#writing-md code {
+    background-color: #f6f8fa;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+/* Bloques de código */
+#writing-md pre {
+    background-color: #f6f8fa;
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+#writing-md pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Tablas */
+#writing-md table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+#writing-md th,
+#writing-md td {
+    border: 1px solid #ddd;
+    padding: 0.6em 1em;
+}
+#writing-md th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+/* Citas */
+#writing-md blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 1rem;
+    color: #666;
+    margin: 1rem 0;
+}

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const links = Array.from(document.querySelectorAll('#menu a'));
     const sections = {
-        writing: document.getElementById('post'),
+        writing: document.getElementById('writing'),
         about:   document.getElementById('about'),
         lecture: document.getElementById('lecture')
     };
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Lógica adicional para writing-md
         if (name === 'writing') {
-            document.getElementById('post').style.display = 'block';
+            document.getElementById('writing').style.display = 'block';
             if (writingMd) writingMd.style.display = 'none';
         } else {
             if (writingMd) writingMd.style.display = 'none';
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showSection('lecture', false);
     }
 
-    // Manejadores de click en los posts
-    document.querySelectorAll('#post a').forEach(link => {
+    // Manejadores de click en los writings
+    document.querySelectorAll('#writing a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
 
@@ -82,15 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     return response.text();
                 })
                 .then(textoArchivo => {
-                    // Oculta la lista de posts y muestra el contenido
-                    document.getElementById('post').style.display = 'none';
+                    // Oculta la lista de writings y muestra el contenido
+                    document.getElementById('writing').style.display = 'none';
                     writingMd.style.display = 'block';
-                    writingMd.textContent = textoArchivo;
+
+                    // Convertir el contenido Markdown a HTML
+                    writingMd.innerHTML = marked.parse(textoArchivo);
                 })
                 .catch(error => {
                     console.error(error.message);
                     writingMd.style.display = 'block';
-                    writingMd.textContent = 'Error al cargar el archivo.';
+                    writingMd.innerHTML = `<p>Error al cargar el archivo.</p>`;
                 });
         });
     });
