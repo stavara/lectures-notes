@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = {
         writing: document.getElementById('writing'),
         about:   document.getElementById('about'),
-        lecture: document.getElementById('lecture')
+        lecture: document.getElementById('lecture'),
+        reading: document.getElementById('reading')
     };
     const writingMd = document.getElementById('writing-md');
 
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         links.forEach(a => {
             const txt = a.textContent.trim().toLowerCase();
             const isActive =
+                (name === 'reading' && txt.includes('reading')) ||
                 (name === 'writing' && txt.includes('writing')) ||
                 (name === 'about'   && txt.includes('about'))   ||
                 (name === 'lecture' && txt.includes('lecture'));
@@ -51,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSection('about');
             } else if (txt.includes('lecture')) {
                 showSection('lecture');
+            } else if (txt.includes('reading')) {
+                showSection('reading');
             } else {
                 showSection('writing');
             }
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Al cargar la página
     const hash = location.hash.slice(1).toLowerCase();
-    if (hash === 'about' || hash === 'writing' || hash === 'lecture') {
+    if (hash === 'about' || hash === 'writing' || hash === 'lecture' || hash === 'reading') {
         showSection(hash, false);
     } else {
         showSection('lecture', false);

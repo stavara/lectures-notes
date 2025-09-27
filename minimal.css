@@ -15,7 +15,7 @@ body {
     color: #16171a;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 main {
@@ -47,7 +47,7 @@ main {
     color: #000000;
 }
 
-#writing, #about, #lecture, #writing-md {
+#writing, #about, #lecture, #writing-md, #reading {
     flex-direction: column;
     width: 100%;
     padding-left: 30px;
@@ -55,7 +55,7 @@ main {
     display: none;
 }
 
-#writing > p, #lecture > p  {
+#writing > p, #lecture > p, #reading > p {
     display: flex;
     justify-content: space-between;
     margin: 0 0 0.5rem 0;
@@ -63,7 +63,7 @@ main {
     gap: 8px;
 }
 
-#writing > p > a,  #lecture > p > a {
+#writing > p > a,  #lecture > p > a, #reading > p > a {
     flex: 1 1 auto;
     min-width: 0;
     overflow: hidden;
@@ -74,7 +74,7 @@ main {
     color: #000000;
 }
 
-#writing > p > a:hover,  #lecture > p > a:hover {
+#writing > p > a:hover,  #lecture > p > a:hover, #reading > p > a:hover {
     text-decoration: underline;
 }
 
@@ -97,7 +97,7 @@ span {
         width: 100%;
     }
 
-    #writing, #about, #writing-md, #lecture {
+    #writing, #about, #writing-md, #lecture, #reading {
         padding-left: 20px;
     }
 
